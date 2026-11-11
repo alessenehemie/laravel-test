@@ -6,26 +6,17 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
-// exemple de route
+
 Route::get('/hello', function () {
-    return('heeeeeellllllllloooooooo');
+    return('hhheeeeeeeeellllllllllllllllllllloooooooooooooooooooooooooooooooooo');
 }); 
 
-Route::post('/user', function () {
-    return('utilisateur creer');
-}); 
-
-Route::put('/user/{id}', function (%id) {// modifie entierement une ressource 
-    return"utilisateur $id modifier";
-}); 
-
-Route::patch('/user/{id}', function (%id) { // modifie partiellement une ressource 
-    return"utilisateur $id modifier";
-}); 
-
-Route::delete('/user/{id}', function (%id) {
-    return"utilisateur $id supprimer";
-}); 
-Route::option('/user', function () {
-    return("option pour les utilisateurs");
-}); 
+route :: prefix('dashboard')-> group(function(){
+    
+       Route::get('/admin', function () {
+                       return('page admin');
+                 }); 
+       Route::get('/user', function () {
+                       return('page user');
+                 }); 
+});
